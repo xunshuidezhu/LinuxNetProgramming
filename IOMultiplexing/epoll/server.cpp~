@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <sys/epoll.h>
+#include <arpa/inet.h>
+
+#define BUFFERSIZE 100
+#define EPOLLSIZE 50
+
+
+void handle_error(char* msg);
+int main()
+{ 
+	int serverSock, clientSock;
+	sockaddr_in serverAddr, clientAddr;
+	socklen_t clientAddrSize;
+	int str_len, i;
+	
+	serverSock = socket(AF_INET, SOCK_STREAM, 0);
+	if (serverSock < 0) {
+	  handle_error("serverSock create error");
+	}
+	
+	
+	
+}
+void handle_error(char* msg) 
+{
+	fputs(msg, stderr);
+	fputc('\n',stderr);
+	exit(-1);
+}
+
+
+
+		
+
